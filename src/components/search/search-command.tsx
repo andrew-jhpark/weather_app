@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useDebounce } from "@/hooks/useDebounce";
 import { Loader2, MapPin, Star, History } from "lucide-react";
 import { useLocationContext } from "@/contexts/LocationContext";
@@ -35,7 +35,7 @@ export function SearchCommand() {
   } = useLocationContext();
   const { t } = useI18n();
 
-  const majorCities: LocationInfo[] = [
+  const majorCities: LocationInfo[] = useMemo(() => [
     { id: "kr-seoul", name: "서울", country: "KR", lat: 37.5665, lon: 126.978 },
     { id: "kr-busan", name: "부산", country: "KR", lat: 35.1796, lon: 129.0756 },
     { id: "kr-incheon", name: "인천", country: "KR", lat: 37.4563, lon: 126.7052 },
@@ -62,7 +62,7 @@ export function SearchCommand() {
     { id: "kr-gyeongju", name: "경주", country: "KR", lat: 35.8562, lon: 129.2248 },
     { id: "kr-gumi", name: "구미", country: "KR", lat: 36.1134, lon: 128.3393 },
     { id: "kr-gimhae", name: "김해", country: "KR", lat: 35.234, lon: 128.881 },
-  ];
+  ], []);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {

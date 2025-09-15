@@ -21,6 +21,7 @@ import {
 } from "@/lib/format";
 import { WeatherIcon } from "@/components/ui/weather-icon";
 import { WeatherData } from "@/types/weather.types";
+import { getWeatherColorTheme, adjustColorForTime } from "@/lib/weatherColors";
 
 interface CurrentWeatherCardProps {
   weatherData: WeatherData | null | undefined;
@@ -81,21 +82,26 @@ export function CurrentWeatherCard({
           icon: "04d",
         };
 
+  // 날씨 상태별 색상 테마 가져오기
+  const currentHour = new Date().getHours();
+  const baseColorTheme = getWeatherColorTheme(weather.main);
+  const colorTheme = adjustColorForTime(baseColorTheme, currentHour);
+
   return (
-    <Card className="w-full">
+    <Card className={`w-full border-0 ${colorTheme.background}`}>
       <CardHeader className="pb-2">
         <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <CardTitle className="text-2xl">{locationName}</CardTitle>
-            <p className="text-sm text-muted-foreground">
+            <CardTitle className={`text-2xl ${colorTheme.text}`}>{locationName}</CardTitle>
+            <p className={`text-sm ${colorTheme.accent}`}>
               {t("weather.basedOn", { date: formatDate(current.dt, "long") })}
             </p>
           </div>
           <div className="text-left sm:text-right">
-            <div className="text-4xl font-bold">
+            <div className={`text-4xl font-bold ${colorTheme.text}`}>
               {formatTemperature(current.temp, preferences.units)}
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className={`text-sm ${colorTheme.accent}`}>
               {t("weather.feelsLike")}{" "}
               {formatTemperature(current.feels_like, preferences.units)}
             </p>
@@ -109,11 +115,11 @@ export function CurrentWeatherCard({
               iconCode={weather.icon}
               size="large"
               alt={weather.description}
-              className="h-20 w-20"
+              className={`h-20 w-20 ${colorTheme.icon}`}
             />
             <div className="ml-4">
-              <h3 className="text-xl font-medium">{weather.main}</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className={`text-xl font-medium ${colorTheme.text}`}>{weather.main}</h3>
+              <p className={`text-sm ${colorTheme.accent}`}>
                 {weather.description}
               </p>
             </div>
@@ -122,11 +128,11 @@ export function CurrentWeatherCard({
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
             {todayForecast && (
               <div className="flex items-center gap-2">
-                <Thermometer className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">
+                <Thermometer className={`h-4 w-4 ${colorTheme.icon}`} />
+                <span className={`text-sm ${colorTheme.accent}`}>
                   {t("weather.highLow")}:
                 </span>
-                <span className="text-sm font-medium">
+                <span className={`text-sm font-medium ${colorTheme.text}`}>
                   {formatTemperature(todayForecast.temp.max, preferences.units)}
                   {" / "}
                   {formatTemperature(todayForecast.temp.min, preferences.units)}
@@ -134,20 +140,20 @@ export function CurrentWeatherCard({
               </div>
             )}
             <div className="flex items-center gap-2">
-              <Droplets className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">
+              <Droplets className={`h-4 w-4 ${colorTheme.icon}`} />
+              <span className={`text-sm ${colorTheme.accent}`}>
                 {t("weather.humidity")}:
               </span>
-              <span className="text-sm font-medium">
+              <span className={`text-sm font-medium ${colorTheme.text}`}>
                 {formatHumidity(current.humidity)}
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <Wind className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">
+              <Wind className={`h-4 w-4 ${colorTheme.icon}`} />
+              <span className={`text-sm ${colorTheme.accent}`}>
                 {t("weather.wind")}:
               </span>
-              <span className="text-sm font-medium">
+              <span className={`text-sm font-medium ${colorTheme.text}`}>
                 {formatWindSpeed(
                   current.wind_speed,
                   preferences.units,
@@ -168,7 +174,7 @@ export function CurrentWeatherCard({
             </AlertDescription>
           </Alert>
         ) : (
-          <p className="text-sm text-muted-foreground">
+          <p className={`text-sm ${colorTheme.accent}`}>
             {t("weather.sunrise")}: {formatDate(current.sunrise, "short")} /{" "}
             {t("weather.sunset")}: {formatDate(current.sunset, "short")}
           </p>
