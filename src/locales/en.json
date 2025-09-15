@@ -1,0 +1,72 @@
+{
+  "common": {
+    "appName": "Weather App",
+    "retry": "Retry",
+    "loading": "Loading...",
+    "error": "Error",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "now": "Now",
+    "search": "Search",
+    "searching": "Searching",
+    "unknown": "Unknown",
+    "back": "Back",
+    "home": "Home"
+  },
+  "header": {
+    "searchPlaceholder": "Search for a city or airport...",
+    "currentLocation": "Current Location"
+  },
+  "search": {
+    "results": "Search Results",
+    "favorites": "Favorites",
+    "recents": "Recents",
+    "noResults": "No results found.",
+    "noResultsFor": "No results found for \"{query}\".",
+    "addFavorite": "Add to favorites",
+    "removeFavorite": "Remove from favorites"
+  },
+  "welcome": {
+    "title": "Welcome",
+    "description": "Welcome to the location-based weather app. Click the current location button or search for a location to check the weather."
+  },
+  "weather": {
+    "forecast": "Forecast",
+    "hourly": "Hourly",
+    "daily": "Daily",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset",
+    "highLow": "High/Low",
+    "precipitation": "Precipitation",
+    "currentWeather": "Current Weather",
+    "basedOn": "As of {date}"
+  },
+  "errorMessages": {
+    "fetchFailed": "An error occurred while fetching the weather data.",
+    "noHourlyData": "Hourly forecast data could not be retrieved.",
+    "noDailyData": "Daily forecast data could not be retrieved.",
+    "noLocation": "Please select a location. Use the search bar above or click the current location button."
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Adjust your app preferences",
+    "temperatureUnit": "Temperature Unit",
+    "language": "Language",
+    "windSpeed": "Wind Speed Unit",
+    "pressureUnit": "Pressure Unit",
+    "theme": "Theme",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "systemMode": "System Mode"
+  },
+  "uvi": {
+    "low": "Low",
+    "moderate": "Moderate",
+    "high": "High",
+    "veryHigh": "Very High",
+    "extreme": "Extreme"
+  }
+}

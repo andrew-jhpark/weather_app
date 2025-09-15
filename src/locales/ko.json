@@ -1,0 +1,72 @@
+{
+  "common": {
+    "appName": "날씨 앱",
+    "retry": "다시 시도",
+    "loading": "불러오는 중...",
+    "error": "오류",
+    "today": "오늘",
+    "tomorrow": "내일",
+    "now": "지금",
+    "search": "검색",
+    "searching": "검색 중",
+    "unknown": "알 수 없음",
+    "back": "뒤로가기",
+    "home": "홈으로"
+  },
+  "header": {
+    "searchPlaceholder": "도시 또는 공항 검색...",
+    "currentLocation": "현재 위치"
+  },
+  "search": {
+    "results": "검색 결과",
+    "favorites": "즐겨찾기",
+    "recents": "최근 검색",
+    "noResults": "검색 결과가 없습니다.",
+    "noResultsFor": "\"{query}\"에 대한 검색 결과가 없습니다.",
+    "addFavorite": "즐겨찾기 추가",
+    "removeFavorite": "즐겨찾기 제거"
+  },
+  "welcome": {
+    "title": "환영합니다",
+    "description": "지역 기반 날씨 웹앱에 오신 것을 환영합니다. 현재 위치 버튼을 클릭하거나 지역을 검색하여 날씨 정보를 확인하세요."
+  },
+  "weather": {
+    "forecast": "날씨 예보",
+    "hourly": "시간별",
+    "daily": "일별",
+    "feelsLike": "체감",
+    "humidity": "습도",
+    "wind": "바람",
+    "sunrise": "일출",
+    "sunset": "일몰",
+    "highLow": "최고/최저",
+    "precipitation": "강수 확률",
+    "currentWeather": "현재 날씨",
+    "basedOn": "{date} 기준"
+  },
+  "errorMessages": {
+    "fetchFailed": "날씨 정보를 불러오는 중 오류가 발생했습니다.",
+    "noHourlyData": "시간별 예보 데이터를 불러올 수 없습니다.",
+    "noDailyData": "일별 예보 데이터를 불러올 수 없습니다.",
+    "noLocation": "위치를 선택해주세요. 상단의 검색창을 이용하거나 현재 위치 버튼을 클릭하세요."
+  },
+  "settings": {
+    "title": "설정",
+    "description": "앱의 환경설정을 조정하세요",
+    "temperatureUnit": "온도 단위",
+    "language": "언어",
+    "windSpeed": "풍속 단위",
+    "pressureUnit": "기압 단위",
+    "theme": "테마",
+    "darkMode": "다크 모드",
+    "lightMode": "라이트 모드",
+    "systemMode": "시스템 모드"
+  },
+  "uvi": {
+    "low": "낮음",
+    "moderate": "보통",
+    "high": "높음",
+    "veryHigh": "매우 높음",
+    "extreme": "위험"
+  }
+}
